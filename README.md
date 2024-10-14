@@ -1,46 +1,45 @@
-# Resenha sobre a Arquitetura de Microserviços
+# Resenha capítulo 6 Padrões de Projeto e Arquitetura de Software
 
-A arquitetura de microserviços tem ganhado destaque no desenvolvimento de aplicações modernas, apresentando-se como uma alternativa promissora às arquiteturas monolíticas tradicionais. Embora ofereça benefícios significativos, é importante abordar essa tendência com um otimismo cauteloso, reconhecendo tanto as suas vantagens quanto os desafios inerentes à sua adoção.
+Introduz o conceito de Padrões de Projeto, que são soluções reutilizáveis para problemas recorrentes no design de software, visando criar sistemas mais flexíveis e extensíveis, sendo uma funcionando como soluções já testada para sistemas que estão sendo montados, e soluções já conhecidas as para novos usuários do sistestema, Inspirados nas ideias de Christopher Alexander e adaptados pela "Gangue dos Quatro" (GoF), tendo algumas idéias que vieram depois, os padrões de projeto também servem como um vocabulário comum entre desenvolvedores.
 
-## Benefícios dos Microserviços
+### São apresentados no capítulo 6 os seguintes padrões de software:
 
-### Escalabilidade
+- **Fábrica**: Centraliza a criação de objetos, permitindo que o código seja independente das classes concretas instanciadas.
 
-Uma das principais vantagens dos microserviços é a capacidade de escalar componentes individualmente. Isso permite que partes específicas da aplicação lidem com cargas crescentes sem a necessidade de escalar todo o sistema, resultando em uso mais eficiente de recursos e potencial redução de custos operacionais.
+- **Singleton**: Garante que uma classe tenha apenas uma instância e fornece um ponto global de acesso a ela.
 
-### Flexibilidade Tecnológica
+- **Proxy**: Introduz um objeto intermediário que controla o acesso a outro objeto, podendo adicionar funcionalidades como cache ou segurança.
 
-Os microserviços permitem que as equipes escolham as tecnologias que melhor se adaptam a cada serviço. Essa liberdade promove a inovação e possibilita o uso de diferentes linguagens de programação e bancos de dados conforme as necessidades específicas, evitando o engessamento tecnológico.
+- **Adaptador**: Converte a interface de uma classe para outra esperada pelos clientes, permitindo a integração entre classes incompatíveis.
 
-### Alinhamento com Capacidades de Negócio
+- **Fachada**: Fornece uma interface simplificada para um conjunto complexo de interfaces em um subsistema, facilitando seu uso.
 
-Ao organizar os serviços em torno de capacidades de negócio, as equipes podem focar em entregar valor diretamente aos usuários. Essa abordagem orientada a produtos facilita a adaptação rápida a mudanças nos requisitos de negócio e promove uma maior compreensão das necessidades dos clientes.
+- **Decorador**: Adiciona dinamicamente novas responsabilidades a um objeto sem alterar sua estrutura, oferecendo uma alternativa flexível à herança.
 
-## Desafios Significativos
+- **Strategy**: Define uma família de algoritmos intercambiáveis, permitindo que o algoritmo usado por uma classe seja selecionado em tempo de execução.
 
-### Complexidade Operacional
+- **Observador**: Estabelece uma relação um-para-muitos entre objetos, onde mudanças no estado de um objeto (sujeito) são notificadas a todos os seus observadores.
 
-A decomposição de uma aplicação em múltiplos serviços aumenta a complexidade da implantação, monitoramento e manutenção. Gerenciar comunicações entre serviços, lidar com falhas e garantir a consistência dos dados requer uma infraestrutura robusta e práticas avançadas de DevOps.
+- **Template Method**: Define o esqueleto de um algoritmo na classe base e permite que subclasses personalizem certos passos do algoritmo sem alterar sua estrutura geral.
 
-### Definição de Fronteiras de Serviço
+- **Visitor**: Separa algoritmos das estruturas de dados, permitindo adicionar novas operações sem modificar as classes dos elementos sobre os quais opera.
 
-Determinar corretamente os limites entre os microserviços é crítico. Fronteiras mal definidas podem levar a alto acoplamento, dependências circulares e dificuldades na coordenação entre equipes, prejudicando a agilidade que a arquitetura pretende oferecer.
+> O capítulo enfatiza que, embora úteis, os padrões de projeto não são uma "bala de prata" e devem ser aplicados com critério. O uso excessivo ou inadequado pode complicar desnecessariamente o sistema. É crucial avaliar se a aplicação de um padrão realmente agrega valor ao projeto.
 
-### Necessidade de Equipes Qualificadas
+# Resenha capítulo 7 Arquitetura de Software
 
-A adoção bem-sucedida de microserviços depende de equipes com habilidades sólidas em arquitetura de software, automação de infraestrutura e cultura DevOps. Sem o nível adequado de expertise, os benefícios potenciais podem não ser alcançados, e a complexidade adicional pode superar as vantagens.
+Introduz o conceito de Arquitetura de Software, enfatizando sua importância como conjunto de decisões críticas que moldam um sistema e são difíceis de reverter, enquanto discute diferentes definições de arquitetura, destacando que vai além da organização de classes, envolvendo escolhas estratégicas que impactam profundamente o software.
 
-## Considerações Finais
+### Em seguida, o capítulo explora os seguintes padrões arquiteturais:
 
-A decisão de adotar uma arquitetura de microserviços deve ser baseada em uma análise cuidadosa do contexto organizacional e das habilidades da equipe. É essencial avaliar se os benefícios alinham-se com os objetivos do negócio e se a organização está preparada para enfrentar os desafios associados.
+- **Arquitetura em Camadas**: Promove a organização hierárquica do sistema, onde cada camada só se comunica com a imediatamente inferior, facilitando manutenção e evolução.
 
-Nem todas as organizações ou projetos se beneficiarão igualmente dessa abordagem. Para algumas, a simplicidade e a familiaridade de uma arquitetura monolítica podem ser mais adequadas. Para outras, especialmente aquelas que necessitam de alta escalabilidade e rapidez na adaptação às mudanças de mercado, os microserviços podem oferecer vantagens competitivas significativas.
+- **Arquitetura MVC (Model-View-Controller)**: Separa a aplicação em modelo, visão e controlador, melhorando a modularidade e permitindo múltiplas interfaces para o mesmo modelo.
 
-## Referências
+- **Microsserviços**: Defende a decomposição do sistema em serviços independentes, favorecendo escalabilidade e implantação contínua, mas alerta sobre a complexidade adicional e desafios em sistemas distribuídos.
 
-- Fowler, M., & Lewis, J. Microservices. martinfowler.com
-- Newman, S. Building Microservices. O'Reilly Media.
+- **Arquiteturas Orientadas a Mensagens e Publish/Subscribe**: Abordam o desacoplamento entre componentes via comunicação assíncrona, aumentando a robustez e escalabilidade do sistema.
 
-<hr>
+O autor também discute outros padrões e alerta para o anti-padrão Big Ball of Mud, caracterizado pela ausência de uma arquitetura clara, resultando em sistemas difíceis de manter.
 
-**Nota:** A arquitetura de microserviços representa uma evolução no desenvolvimento de software, mas sua implementação exige maturidade técnica e organizacional. Abordá-la com otimismo cauteloso permite que as organizações colham seus benefícios enquanto gerenciam os riscos envolvidos.
+A resenha deste capítulo destaca a abordagem equilibrada do autor, que apresenta os padrões arquiteturais não apenas em teoria, mas também considerando seus benefícios e limitações práticas. Ao enfatizar a necessidade de escolhas conscientes e contextuais, o capítulo incentiva profissionais a refletirem criticamente sobre as melhores soluções arquiteturais para seus projetos, evitando a aplicação indiscriminada de tendências e reconhecendo que não há soluções universais em arquitetura de software.
